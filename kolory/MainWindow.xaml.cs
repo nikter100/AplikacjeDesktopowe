@@ -23,6 +23,23 @@ namespace kolory
         public MainWindow()
         {
             InitializeComponent();
+            sliders_ValueChanged(null, null);
+        }
+
+        private void sliders_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+            Color kolor = Color.FromRgb(
+                (byte)sliderR.Value,
+                (byte)sliderG.Value,
+                (byte)sliderB.Value);
+
+            rectangle.Fill = new SolidColorBrush(kolor);
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape) Close();
         }
     }
 }

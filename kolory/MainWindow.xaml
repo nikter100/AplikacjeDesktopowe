@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kolory"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" MinWidth="320" MinHeight="200"
+        KeyDown="Window_KeyDown">
+    <DockPanel LastChildFill="True">
+
+        <Slider x:Name="sliderB" Maximum="255" Margin="10,10,10,10" DockPanel.Dock="Bottom" ValueChanged="sliders_ValueChanged"/>
+        <Slider x:Name="sliderG" Maximum="255" Margin="10,10,10,10" DockPanel.Dock="Bottom" ValueChanged="sliders_ValueChanged"/>
+        <Slider x:Name="sliderR" Maximum="255" Margin="10,10,10,10" DockPanel.Dock="Bottom" ValueChanged="sliders_ValueChanged"/>
+        <Rectangle x:Name="rectangle" DockPanel.Dock="Top" Margin="10,10,10,0" Stroke="Black" />
+    </DockPanel>
 </Window>
